@@ -25,6 +25,11 @@ mapping["sensors/temperature/attic"] = { file: "arduino-attic.rrd", ds: "one" };
 mapping["sensors/temperature/jeenode-11"] = { file: "jeenode-11-d1.rrd", ds: "one" };
 mapping["sensors/temperature/jeenode-15"] = { file: "jeenode-15-d1.rrd", ds: "one" };
 mapping["sensors/temperature/egpd"] = { file: "weather_egpd_temp.rrd", ds: "TEMP" };
+mapping["sensors/humidity/jeenode-11"] = { file: "jeenode-11-d2.rrd", ds: "one" };
+mapping["sensors/humidity/jeenode-15"] = { file: "jeenode-15-d2.rrd", ds: "one" };
+mapping["sensors/co/jeenode-15"] = { file: "jeenode-15-d3.rrd", ds: "one" };
+mapping["sensors/no2/jeenode-15"] = { file: "jeenode-15-d4.rrd", ds: "one" };
+mapping["sensors/boiler/in"] = { file: "jeenode-11-dX.rrd", ds: "one" };
 
 
 
@@ -37,8 +42,7 @@ var mqttclient = mqtt.connect(config.mqtt.url, function(err, client) {
 
 
 mqttclient.on('connect', function() {
-	mqttclient.subscribe('sensors/power/+');
-	mqttclient.subscribe('sensors/temperature/+');
+	mqttclient.subscribe('sensors/+/+');
 
 	mqttclient.on('message', function(topic, message) {
 		
