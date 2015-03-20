@@ -20,6 +20,11 @@ mapping["sensors/power/9"] = "currentcost-w9.rrd";
 mapping["sensors/power/WeMo Insight A"] = "wemo-A.rrd";
 mapping["sensors/power/WeMo Insight B"] = "wemo-B.rrd";
 mapping["sensors/power/WeMo Insight C"] = "wemo-C.rrd";
+mapping["sensors/temperature/garage"] = "currentcost-temp.rrd";
+mapping["sensors/temperature/attic"] = "arduino-attic.rrd";
+mapping["sensors/temperature/jeenode-11"] = "jeenode-$NODE-d11.rrd";
+mapping["sensors/temperature/jeenode-15"] = "jeenode-$NODE-d15.rrd";
+mapping["sensors/temperature/egpd"] = "weather_egpd_temp.rrd";
 
 
 
@@ -30,6 +35,8 @@ var mqttclient = mqtt.connect(config.mqtt.url, function(err, client) {
 
 mqttclient.on('connect', function() {
 	mqttclient.subscribe('sensors/power/+');
+	mqttclient.subscribe('sensors/temperature/+');
+
 	mqttclient.on('message', function(topic, message) {
 		console.log(topic, message.toString());
 		
