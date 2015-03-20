@@ -30,6 +30,10 @@ mapping["sensors/humidity/jeenode-15"] = { file: "jeenode-15-d2.rrd", ds: "one" 
 mapping["sensors/co/jeenode-15"] = { file: "jeenode-15-d3.rrd", ds: "one" };
 mapping["sensors/no2/jeenode-15"] = { file: "jeenode-15-d4.rrd", ds: "one" };
 mapping["sensors/boiler/in"] = { file: "jeenode-11-dX.rrd", ds: "one" };
+mapping["sensors/pressure/attic"] = { file: "", ds: "" };
+mapping["sensors/pressure/egpd"] = { file: "", ds: "" };
+mapping["sensors/humidity/egpd"] = { file: "", ds: "" };
+
 
 
 
@@ -46,23 +50,27 @@ mqttclient.on('connect', function() {
 
 	mqttclient.on('message', function(topic, message) {
 		
-		if (topic != "sensors/power/U") {	
-			console.log(topic, message.toString());
-			
-			// what will the rrd file be called? (removing /s from the string)
-			var filename = "data/" + mapping[topic].file;
-			
-			// does it exist?
-			if (path.existsSync(filename)) {
-				// console.log(filename + " exists");
-				var value = message.toString();
-				var now = Math.ceil((new Date).getTime() / 1000);
-				rrd.update(filename, mapping[topic].ds, [[now, value].join(':')], function (error) { 
-						if (error) console.log("Error:", error);
-				});
-			} else {
-				console.log(filename + " for " + topic + " does not exist");
-	
+		if (mapping[topic] === undefined) {
+			console.log ("no mapping array entry for " + topic)
+		} else {		
+			if (topic != "sensors/power/U") {	
+				console.log(topic, message.toString());
+				
+				// what will the rrd file be called? (removing /s from the string)
+				var filename = "data/" + mapping[topic].file;
+				
+				// does it exist?
+				if (path.existsSync(filename)) {
+					// console.log(filename + " exists");
+					var value = message.toString();
+					var now = Math.ceil((new Date).getTime() / 1000);
+					rrd.update(filename, mapping[topic].ds, [[now, value].join(':')], function (error) { 
+							if (error) console.log("Error:", error);
+					});
+				} else {
+					console.log(filename + " for " + topic + " does not exist");
+		
+				}
 			}
 		}
 	});
