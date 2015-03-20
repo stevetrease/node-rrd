@@ -22,22 +22,26 @@ mapping["sensors/power/WeMo Insight B"] = "wemo-B.rrd";
 mapping["sensors/power/WeMo Insight C"] = "wemo-C.rrd";
 mapping["sensors/temperature/garage"] = "currentcost-temp.rrd";
 mapping["sensors/temperature/attic"] = "arduino-attic.rrd";
-mapping["sensors/temperature/jeenode-11"] = "jeenode-$NODE-d11.rrd";
-mapping["sensors/temperature/jeenode-15"] = "jeenode-$NODE-d15.rrd";
+mapping["sensors/temperature/jeenode-11"] = "jeenode-11-d1.rrd";
+mapping["sensors/temperature/jeenode-15"] = "jeenode-15-d1.rrd";
 mapping["sensors/temperature/egpd"] = "weather_egpd_temp.rrd";
 
 
 
 var mqtt = require('mqtt');
-var mqttclient = mqtt.connect(config.mqtt.url, function(err, client) {
+var mqttclient1 = mqtt.connect(config.mqtt.url, function(err, client) {
+	keepalive: 1000
+});
+var mqttclient2 = mqtt.connect(config.mqtt.url, function(err, client) {
 	keepalive: 1000
 });
 
-mqttclient.on('connect', function() {
-	mqttclient.subscribe('sensors/power/+');
-	mqttclient.subscribe('sensors/temperature/+');
 
-	mqttclient.on('message', function(topic, message) {
+
+
+mqttclient1.on('connect', function() {
+	mqttclient1.subscribe('sensors/power/+');
+	mqttclient1.on('message', function(topic, message) {
 		console.log(topic, message.toString());
 		
 		// what will the rrd file be called? (removing /s from the string)
@@ -58,3 +62,28 @@ mqttclient.on('connect', function() {
 		}
 	});
 });
+
+
+
+mqttclient2.on('connect', function() {
+	mqttclient2.subscribe('sensors/temperature/+');
+	mqttclient2.on('message', function(topic, message) {
+		console.log(topic, message.toString());
+		
+		// what will the rrd file be called? (removing /s from the string)
+		var filename = "data/" + mapping[topic];
+		
+		// does it exist?
+		if (path.existsSync(filename)) {
+			// console.log(filename + " exists");
+			var value = message.toString();
+			var now = Math.ceil((new Date).getTime() / 1000);
+			rrd.update(filename, "TEMP", [[now, value].join(':')], function (error) { 
+					if (error) console.log("Error:", error);
+			});
+		} else {
+			console.log(filename + " for " + topic + " does not exist");
+		}
+	});
+});
+
