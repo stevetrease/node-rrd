@@ -40,7 +40,7 @@ mqttclient.on('connect', function() {
 	mqttclient.subscribe('sensors/power/+');
 	mqttclient.subscribe('sensors/temperature/+');
 
-	mqttclient1.on('message', function(topic, message) {
+	mqttclient.on('message', function(topic, message) {
 		
 		if (topic != "sensors/power/U") {	
 			console.log(topic, message.toString());
