@@ -1,0 +1,13 @@
+{
+  "name": "application-name",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node node-rss.js"
+  },
+  "dependencies": {
+   "nodemon": "*",
+   "mqtt": "*",
+   "node_rrd": "git+https://github.com/Orion98MC/node_rrd"
+  }
+}

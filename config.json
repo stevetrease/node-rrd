@@ -1,0 +1,11 @@
+{
+    "mqtt":
+    {
+        "url": "mqtt://mqtt.trease.eu"
+    },
+    "redis":
+    {
+        "host": "redis.trease.eu",
+        "port": "6379"
+    }
+}

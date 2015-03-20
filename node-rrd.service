@@ -1,0 +1,15 @@
+[Unit]
+Description=node RRS
+After=redis.service mosquitto.service
+Requires=redis.service mosquitto.service
+
+[Service]
+ExecStart=/home/steve/node-rrd/node-rrd.sh
+WorkingDirectory=/home/steve/node-rrd
+Environment=NODE_ENV=production
+Type=simple
+User=steve
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
