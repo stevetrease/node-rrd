@@ -49,13 +49,12 @@ mqttclient.on('connect', function() {
 	mqttclient.subscribe('sensors/+/+');
 
 	mqttclient.on('message', function(topic, message) {
+		// console.log(topic, message.toString());
 		
 		if (mapping[topic] === undefined) {
 			console.log ("no mapping array entry for " + topic)
 		} else {		
 			if (topic != "sensors/power/U") {	
-				console.log(topic, message.toString());
-				
 				// what will the rrd file be called? (removing /s from the string)
 				var filename = "data/" + mapping[topic].file;
 				
@@ -69,7 +68,6 @@ mqttclient.on('connect', function() {
 					});
 				} else {
 					console.log(filename + " for " + topic + " does not exist");
-		
 				}
 			}
 		}
