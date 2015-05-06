@@ -1,12 +1,24 @@
-var config = require('./config.json');
+console.log("process.env.NODE_ENV:" + process.env.NODE_ENV);
+switch (process.env.NODE_ENV) {
+        case 'development':
+                console.log ("development mode");
+                var config = require('./config.json');
+                break;
+        case 'production':
+        default:
+                console.log ("production mode");
+                var config = require('./config.json');
+}
+
+
 var fs = require('fs');
-var path = require('path');
 var rrd = require('rrd');
 
 
 
 // topic to file mapping
 var mapping = {};
+mapping["sensors/power/U"] = { file: "currentcost-unknown.rrd", ds: "WATTS" };
 mapping["sensors/power/0"] = { file: "currentcost-w0.rrd", ds: "WATTS" };
 mapping["sensors/power/1"] = { file: "currentcost-w1.rrd", ds: "WATTS" };
 mapping["sensors/power/2"] = { file: "currentcost-w2.rrd", ds: "WATTS" };
@@ -54,21 +66,19 @@ mqttclient.on('connect', function() {
 		if (mapping[topic] === undefined) {
 			console.log ("no mapping array entry for " + topic)
 		} else {		
-			if (topic != "sensors/power/U") {	
-				// what will the rrd file be called? (removing /s from the string)
-				var filename = "data/" + mapping[topic].file;
-				
-				// does it exist?
-				if (path.existsSync(filename)) {
-					// console.log(filename + " exists");
-					var value = message.toString();
-					var now = Math.ceil((new Date).getTime() / 1000);
-					rrd.update(filename, mapping[topic].ds, [[now, value].join(':')], function (error) { 
-							if (error) console.log("Error:", error);
-					});
-				} else {
-					console.log(filename + " for " + topic + " does not exist");
-				}
+			// what will the rrd file be called? (removing /s from the string)
+			var filename = "data/" + mapping[topic].file;
+			
+			// does it exist?
+			if (fs.existsSync(filename)) {
+				// console.log(filename + " exists");
+				var value = message.toString();
+				var now = Math.ceil((new Date).getTime() / 1000);
+				rrd.update(filename, mapping[topic].ds, [[now, value].join(':')], function (error) { 
+						if (error) console.log("Error:", error);
+				});
+			} else {
+				console.log(filename + " for " + topic + " does not exist");
 			}
 		}
 	});
