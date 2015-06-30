@@ -1,17 +1,6 @@
-console.log("process.env.NODE_ENV:" + process.env.NODE_ENV);
-switch (process.env.NODE_ENV) {
-        case 'development':
-                console.log ("development mode");
-                var config = require('./config.json');
-                break;
-        case 'production':
-        default:
-                console.log ("production mode");
-                var config = require('./config.json');
-}
-
-
+var config = require('./config.json');
 var fs = require('fs');
+var path = require('path');
 var rrd = require('rrd');
 
 
@@ -45,6 +34,18 @@ mapping["sensors/boiler/in"] = { file: "jeenode-11-dX.rrd", ds: "one" };
 mapping["sensors/pressure/attic"] = { file: "", ds: "" };
 mapping["sensors/pressure/egpd"] = { file: "", ds: "" };
 mapping["sensors/humidity/egpd"] = { file: "", ds: "" };
+mapping["sensors/mosquitto/sent"] = { file: "mosquitto_sent.rrd", ds: "one" };
+mapping["sensors/mosquitto/received"] = { file: "mosquitto_received.rrd", ds: "one" };
+mapping["sensors/router/inbytes"] = { file: "router.rrd", ds: "inbytes" };
+mapping["sensors/router/outbytes"] = { file: "router.rrd", ds: "outbytes" };
+mapping["sensors/crashplan/di"] = { file: "crashplan-di.rrd", ds: "used" };
+mapping["sensors/crashplan/paul"] = { file: "crashplan-paul.rrd", ds: "used" };
+mapping["sensors/crashplan/anzac"] = { file: "crashplan-anzac.rrd", ds: "used" };
+mapping["sensors/crashplan/mary"] = { file: "crashplan-mary.rrd", ds: "used" };
+mapping["sensors/crashplan/638125789256614226"] = { file: "crashplan-638125789256614226.rrd", ds: "used" };
+mapping["sensors/crashplan/647696171466752298"] = { file: "crashplan-647696171466752298.rrd", ds: "used" };
+mapping["sensors/crashplan/656367726543503638"] = { file: "crashplan-656367726543503638.rrd", ds: "used" };
+mapping["sensors/crashplan/596727628990775625"] = { file: "crashplan-596727628990775625.rrd", ds: "used" };
 
 
 
@@ -58,10 +59,10 @@ var mqttclient = mqtt.connect(config.mqtt.url, function(err, client) {
 
 
 mqttclient.on('connect', function() {
-	mqttclient.subscribe('sensors/+/+');
+	// mqttclient.subscribe('sensors/+/+');
 
 	mqttclient.on('message', function(topic, message) {
-		// console.log(topic, message.toString());
+		console.log(topic, message.toString());
 		
 		if (mapping[topic] === undefined) {
 			console.log ("no mapping array entry for " + topic)
@@ -70,7 +71,7 @@ mqttclient.on('connect', function() {
 			var filename = "data/" + mapping[topic].file;
 			
 			// does it exist?
-			if (fs.existsSync(filename)) {
+			if (path.existsSync(filename)) {
 				// console.log(filename + " exists");
 				var value = message.toString();
 				var now = Math.ceil((new Date).getTime() / 1000);
