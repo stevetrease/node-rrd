@@ -18,7 +18,7 @@ var mqttclient = mqtt.connect(config.mqtt.url, function(err, client) {
 
 
 mqttclient.on('connect', function() {
-	mqttclient.subscribe('sensors/+/+');
+	// mqttclient.subscribe('sensors/+/+');
 
 	mqttclient.on('message', function(topic, message) {
 		console.log(topic, message.toString());
