@@ -1,10 +1,19 @@
-var config = require('./config.json');
+console.log("process.env.NODE_ENV:" + process.env.NODE_ENV);
+switch (process.env.NODE_ENV) {
+        case 'development':
+                console.log ("development mode");
+                var config = require('./config.json');
+                break;
+        case 'production':
+        default:
+                console.log ("production mode");
+                var config = require('./config.json');
+}
+
 var mapping = require('./mappings.json');
 var fs = require('fs');
 var path = require('path');
 var rrd = require('rrd');
-
-
 
 
 
