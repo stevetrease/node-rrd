@@ -33,7 +33,7 @@ mqttclient.on('connect', function() {
 	//  console.log(topic, message.toString());
 		
 		if (mapping[topic] === undefined) {
-			console.log (topic + ": no mapping array entrys");
+			console.log (topic + ": no mapping array entry");
 		} else {		
 			// what will the rrd file be called? (removing /s from the string)
 			var filename = "data/" + mapping[topic].file;
@@ -44,7 +44,7 @@ mqttclient.on('connect', function() {
 				var value = message.toString();
 				var now = Math.ceil((new Date).getTime() / 1000);
 				rrd.update(filename, mapping[topic].ds, [[now, value].join(':')], function (error) { 
-						if (error) console.log(topic + ": error: ", error);
+				 if (error) console.log(topic + ": error: ", error);
 				});
 			} else {
 				console.log(topic + ": " + filename + " does not exist");
