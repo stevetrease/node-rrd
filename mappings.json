@@ -27,6 +27,8 @@
 		{ "file": "wemo-B.rrd", "ds": "WATTS" },
 	"sensors/power/WeMo Insight C":
 		{ "file": "wemo-C.rrd", "ds": "WATTS" },
+	"sensors/power/WeMo Insight D":
+		{ "file": "wemo-D.rrd", "ds": "WATTS" },
 	"sensors/temperature/garage":
 		{ "file": "currentcost-temp.rrd", "ds": "TEMP" },
 	"sensors/temperature/attic":
