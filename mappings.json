@@ -21,6 +21,7 @@
 		{ "file": "currentcost-w8.rrd", "ds": "WATTS" },
 	"sensors/power/9":
 		{ "file": "currentcost-w9.rrd", "ds": "WATTS" },
+		
 	"sensors/power/WeMo Insight A":
 		{ "file": "wemo-A.rrd", "ds": "WATTS" },
 	"sensors/power/WeMo Insight B":
@@ -29,6 +30,29 @@
 		{ "file": "wemo-C.rrd", "ds": "WATTS" },
 	"sensors/power/WeMo Insight D":
 		{ "file": "wemo-D.rrd", "ds": "WATTS" },
+	
+	"sensors/temperature/02:00:00:12:d3:b6":
+		{ "file": "02:00:00:12:d3:b6-temperature.rrd", "ds": "one" },
+	"sensors/humidity/02:00:00:12:d3:b6":
+		{ "file": "02:00:00:12:d3:b6-humidity.rrd", "ds": "one" },
+	"sensors/temperature/03:00:00:02:50:86":
+		{ "file": "03:00:00:02:50:86-temperature.rrd", "ds": "one" },
+	"sensors/humidity/03:00:00:02:50:86":
+		{ "file": "03:00:00:02:50:86-humidity.rrd", "ds": "one" },
+	"sensors/co2/03:00:00:02:50:86":
+		{ "file": "03:00:00:02:50:86-co2.rrd", "ds": "one" },
+	"sensors/temperature/70:ee:50:12:c8:0e":
+		{ "file": "70:ee:50:12:c8:0e-temperature.rrd", "ds": "one" },
+	"sensors/humidity/70:ee:50:12:c8:0e":
+		{ "file": "70:ee:50:12:c8:0e-humidity.rrd", "ds": "one" },
+	"sensors/pressure/70:ee:50:12:c8:0e":
+		{ "file": "70:ee:50:12:c8:0e-pressure.rrd", "ds": "one" },	
+		
+	"sensors/temperature/300021000447343233323032":
+		{ "file": "300021000447343233323032-temperature.rrd", "ds": "one" },
+	"sensors/humidity/300021000447343233323032":
+		{ "file": "300021000447343233323032-humidity.rrd", "ds": "one" },
+		
 	"sensors/temperature/garage":
 		{ "file": "currentcost-temp.rrd", "ds": "TEMP" },
 	"sensors/temperature/attic":
@@ -59,23 +83,7 @@
 	"sensors/router/inbytes":
 		{ "file": "router.rrd", "ds": "inbytes" },
 	"sensors/router/outbytes":
-		{ "file": "router.rrd", "ds": "outbytes" },
-	"sensors/crashplan/di":
-		{ "file": "crashplan-di.rrd", "ds": "used" },
-	"sensors/crashplan/paul":
-		{ "file": "crashplan-paul.rrd", "ds": "used" },
-	"sensors/crashplan/anzac":
-		{ "file": "crashplan-anzac.rrd", "ds": "used" },
-	"sensors/crashplan/mary":
-		{ "file": "crashplan-mary.rrd", "ds": "used" },
-	"sensors/crashplan/638125789256614226":
-		{ "file": "crashplan-638125789256614226.rrd", "ds": "used" },
-	"sensors/crashplan/647696171466752298":
-		{ "file": "crashplan-647696171466752298.rrd", "ds": "used" },
-	"sensors/crashplan/656367726543503638":
-		{ "file": "crashplan-656367726543503638.rrd", "ds": "used" },
-	"sensors/crashplan/596727628990775625":
-		{ "file": "crashplan-596727628990775625.rrd", "ds": "used" },	
+		{ "file": "router.rrd", "ds": "outbytes" },	
 	"sensors/ios/Steve's iPhone 6":
 		{ "file": "none.rrd", "ds": "used" },
 	"sensors/ios/Steve's iPad Air 2":

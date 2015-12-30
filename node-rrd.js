@@ -12,7 +12,6 @@ switch (process.env.NODE_ENV) {
 
 var mapping = require('./mappings.json');
 var fs = require('fs');
-var path = require('path');
 var rrd = require('rrd');
 
 
@@ -39,7 +38,7 @@ mqttclient.on('connect', function() {
 			var filename = "data/" + mapping[topic].file;
 			
 			// does it exist?
-			if (path.existsSync(filename)) {
+			if (fs.existsSync(filename)) {
 				// console.log(filename + " exists");
 				var value = message.toString();
 				var now = Math.ceil((new Date).getTime() / 1000);
