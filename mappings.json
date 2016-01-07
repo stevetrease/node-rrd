@@ -91,8 +91,8 @@
 		{ "file": "ups-input-frequency.rrd", "ds": "one" },	
 	"sensors/ups/input_voltage":
 		{ "file": "ups-input-voltage.rrd", "ds": "one" },
-	"sensors/ups/input_temperature":
-		{ "file": "ups-input-temperature.rrd", "ds": "one" },
+	"sensors/ups/ups_temperature":
+		{ "file": "ups-ups-temperature.rrd", "ds": "one" },
 	
 	"sensors/pressure/egpd":
 		{ "file": "weather_egpd_pressure.rrd", "ds": "one" },
