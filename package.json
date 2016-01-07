@@ -6,8 +6,6 @@
     "start": "node node-rss.js"
   },
   "dependencies": {
-   "nodemon": "*",
-   "mqtt": "*",
-   "node_rrd": "git+https://github.com/Orion98MC/node_rrd"
+   "mqtt": "*"
   }
 }

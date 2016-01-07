@@ -1,11 +1,12 @@
 {
+    "port": 8502,
     "mqtt":
     {
-        "url": "mqtt://mqtt.trease.eu"
+        "host": "mqtt://localhost"
     },
     "redis":
     {
-        "host": "redis.trease.eu",
+        "host": "localhost",
         "port": "6379"
     }
 }

@@ -1,4 +1,3 @@
 #!/bin/sh
-cd /home/steve/node-rrd
-NODE_ENV=production nodemon node-rrd.js
-
+cd /home/node/node-rrdv2
+NODE_ENV=production node node-rrd.js | sh

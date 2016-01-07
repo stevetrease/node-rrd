@@ -32,21 +32,25 @@
 		{ "file": "wemo-D.rrd", "ds": "WATTS" },
 	
 	"sensors/temperature/02:00:00:12:d3:b6":
-		{ "file": "02:00:00:12:d3:b6-temperature.rrd", "ds": "one" },
+		{ "file": "02000012d3b6-temperature.rrd", "ds": "one" },
 	"sensors/humidity/02:00:00:12:d3:b6":
-		{ "file": "02:00:00:12:d3:b6-humidity.rrd", "ds": "one" },
+		{ "file": "02000012d3b6-humidity.rrd", "ds": "one" },
 	"sensors/temperature/03:00:00:02:50:86":
-		{ "file": "03:00:00:02:50:86-temperature.rrd", "ds": "one" },
+		{ "file": "030000025086-temperature.rrd", "ds": "one" },
+		
 	"sensors/humidity/03:00:00:02:50:86":
-		{ "file": "03:00:00:02:50:86-humidity.rrd", "ds": "one" },
+		{ "file": "030000025086-humidity.rrd", "ds": "one" },
 	"sensors/co2/03:00:00:02:50:86":
-		{ "file": "03:00:00:02:50:86-co2.rrd", "ds": "one" },
+		{ "file": "030000025086-co2.rrd", "ds": "one" },
+		
+	"sensors/co2/70:ee:50:12:c8:0e":
+		{ "file": "70ee5012c80e-co2.rrd", "ds": "one" },
 	"sensors/temperature/70:ee:50:12:c8:0e":
-		{ "file": "70:ee:50:12:c8:0e-temperature.rrd", "ds": "one" },
+		{ "file": "70ee5012c80e-temperature.rrd", "ds": "one" },
 	"sensors/humidity/70:ee:50:12:c8:0e":
-		{ "file": "70:ee:50:12:c8:0e-humidity.rrd", "ds": "one" },
+		{ "file": "70ee5012c80e-humidity.rrd", "ds": "one" },
 	"sensors/pressure/70:ee:50:12:c8:0e":
-		{ "file": "70:ee:50:12:c8:0e-pressure.rrd", "ds": "one" },	
+		{ "file": "70ee5012c80e-pressure.rrd", "ds": "one" },	
 		
 	"sensors/temperature/300021000447343233323032":
 		{ "file": "300021000447343233323032-temperature.rrd", "ds": "one" },
@@ -71,19 +75,23 @@
 		{ "file": "jeenode-15-d3.rrd", "ds": "one" },
 	"sensors/no2/jeenode-15":
 		{ "file": "jeenode-15-d4.rrd", "ds": "one" },
-	"sensors/boiler/in": { "file": "jeenode-11-dX.rrd", "ds": "one" },
+	"sensors/boiler/in":
+		{ "file": "jeenode-11-dX.rrd", "ds": "one" },
 	"sensors/pressure/attic":
 		{ "file": "arduino-pressure.rrd", "ds": "one" },
 	"sensors/pressure/egpd":
 		{ "file": "weather_egpd_pressure.rrd", "ds": "one" },
+		
 	"sensors/mosquitto/sent":
 		{ "file": "mosquitto_sent.rrd", "ds": "one" },
 	"sensors/mosquitto/received":
 		{ "file": "mosquitto_received.rrd", "ds": "one" },
+		
 	"sensors/router/inbytes":
-		{ "file": "router.rrd", "ds": "inbytes" },
+		{ "file": "router-in.rrd", "ds": "one" },
 	"sensors/router/outbytes":
-		{ "file": "router.rrd", "ds": "outbytes" },	
+		{ "file": "router-out.rrd", "ds": "one" },	
+		
 	"sensors/ios/Steve's iPhone 6":
 		{ "file": "none.rrd", "ds": "used" },
 	"sensors/ios/Steve's iPad Air 2":
