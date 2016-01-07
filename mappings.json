@@ -51,6 +51,9 @@
 		{ "file": "70ee5012c80e-humidity.rrd", "ds": "one" },
 	"sensors/pressure/70:ee:50:12:c8:0e":
 		{ "file": "70ee5012c80e-pressure.rrd", "ds": "one" },	
+	"sensors/noise/70:ee:50:12:c8:0e":
+		{ "file": "70ee5012c80e-noise.rrd", "ds": "one" },	
+
 		
 	"sensors/temperature/300021000447343233323032":
 		{ "file": "300021000447343233323032-temperature.rrd", "ds": "one" },
@@ -79,6 +82,22 @@
 		{ "file": "jeenode-11-dX.rrd", "ds": "one" },
 	"sensors/pressure/attic":
 		{ "file": "arduino-pressure.rrd", "ds": "one" },
+		
+	"sensors/ups/battery_voltage":
+		{ "file": "ups-battery-voltage.rrd", "ds": "one" },	
+	"sensors/ups/battery_charge":
+		{ "file": "ups-battery-charge.rrd", "ds": "one" },	
+	"sensors/ups/input_frequency":
+		{ "file": "ups-input-frequency.rrd", "ds": "one" },	
+	"sensors/ups/input_voltage":
+		{ "file": "ups-input-voltage.rrd", "ds": "one" },	
+	
+	"sensors/pressure/egpd":
+		{ "file": "weather_egpd_pressure.rrd", "ds": "one" },
+	"sensors/windspeed/egpd":
+		{ "file": "weather_egpd_windspeed.rrd", "ds": "one" },
+	"sensors/winddirection/egpd":
+		{ "file": "weather_egpd_winddirection.rrd", "ds": "one" },
 	"sensors/pressure/egpd":
 		{ "file": "weather_egpd_pressure.rrd", "ds": "one" },
 		
