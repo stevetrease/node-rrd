@@ -115,6 +115,22 @@
 	"sensors/printer/vostok/ink_remaining":
 		{ "file": "vostok-v1.rrd", "ds": "v1" },
 		
+	"sensors/printer/sputnik/ink_1":
+		{ "file": "sputnik-1.rrd", "ds": "v1" },
+	"sensors/printer/sputnik/ink_2":
+		{ "file": "sputnik-2.rrd", "ds": "v2" },
+	"sensors/printer/sputnik/ink_3":
+		{ "file": "sputnik-3.rrd", "ds": "v3" },
+	"sensors/printer/sputnik/ink_4":
+		{ "file": "sputnik-4.rrd", "ds": "v4" },
+	"sensors/printer/sputnik/ink_5":
+		{ "file": "sputnik-5.rrd", "ds": "v4" },
+
+	"sensors/printer/sputnik/pages_printed":
+		{ "file": "sputnik-pages.rrd", "ds": "v1" },
+
+
+		
 	"sensors/router/inbytes":
 		{ "file": "router-in.rrd", "ds": "one" },
 	"sensors/router/outbytes":
