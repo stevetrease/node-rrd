@@ -109,6 +109,11 @@
 		{ "file": "mosquitto_sent.rrd", "ds": "one" },
 	"sensors/mosquitto/received":
 		{ "file": "mosquitto_received.rrd", "ds": "one" },
+
+	"sensors/printer/vostok/ink_printed":
+		{ "file": "vostok-v2.rrd", "ds": "v2" },
+	"sensors/printer/vostok/ink_remaining":
+		{ "file": "vostok-v1.rrd", "ds": "v1" },
 		
 	"sensors/router/inbytes":
 		{ "file": "router-in.rrd", "ds": "one" },
