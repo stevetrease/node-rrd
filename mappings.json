@@ -54,6 +54,11 @@
 	"sensors/noise/70:ee:50:12:c8:0e":
 		{ "file": "70ee5012c80e-noise.rrd", "ds": "one" },	
 
+	"sensors/temperature/300017000447343232363230":
+		{ "file": "attic-temperature.rrd", "ds": "one" },
+	"sensors/humidity/300017000447343232363230":
+		{ "file": "attic-humidity.rrd", "ds": "one" },
+
 		
 	"sensors/temperature/300021000447343233323032":
 		{ "file": "300021000447343233323032-temperature.rrd", "ds": "one" },
