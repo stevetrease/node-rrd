@@ -1,0 +1,148 @@
+{
+	"sensors/power/U": 
+		{ "file": "currentcost-unknown.rrd", "ds": "WATTS" },
+	"sensors/power/0":
+		{ "file": "currentcost-w0.rrd", "ds": "WATTS" },
+	"sensors/power/1":
+		{ "file": "currentcost-w1.rrd", "ds": "WATTS" },
+	"sensors/power/2":
+		{ "file": "currentcost-w2.rrd", "ds": "WATTS" },
+	"sensors/power/3":
+		{ "file": "currentcost-w3.rrd", "ds": "WATTS" },
+	"sensors/power/4":
+		{ "file": "currentcost-w4.rrd", "ds": "WATTS" },
+	"sensors/power/5":
+		{ "file": "currentcost-w5.rrd", "ds": "WATTS" },
+	"sensors/power/6":
+		{ "file": "currentcost-w6.rrd", "ds": "WATTS" },
+	"sensors/power/7":
+		{ "file": "currentcost-w7.rrd", "ds": "WATTS" },
+	"sensors/power/8":
+		{ "file": "currentcost-w8.rrd", "ds": "WATTS" },
+	"sensors/power/9":
+		{ "file": "currentcost-w9.rrd", "ds": "WATTS" },
+		
+	"sensors/power/WeMo Insight A":
+		{ "file": "wemo-A.rrd", "ds": "WATTS" },
+	"sensors/power/WeMo Insight B":
+		{ "file": "wemo-B.rrd", "ds": "WATTS" },
+	"sensors/power/WeMo Insight C":
+		{ "file": "wemo-C.rrd", "ds": "WATTS" },
+	"sensors/power/WeMo Insight D":
+		{ "file": "wemo-D.rrd", "ds": "WATTS" },
+	
+	"sensors/temperature/02:00:00:12:d3:b6":
+		{ "file": "02000012d3b6-temperature.rrd", "ds": "one" },
+	"sensors/humidity/02:00:00:12:d3:b6":
+		{ "file": "02000012d3b6-humidity.rrd", "ds": "one" },
+	"sensors/temperature/03:00:00:02:50:86":
+		{ "file": "030000025086-temperature.rrd", "ds": "one" },
+		
+	"sensors/humidity/03:00:00:02:50:86":
+		{ "file": "030000025086-humidity.rrd", "ds": "one" },
+	"sensors/co2/03:00:00:02:50:86":
+		{ "file": "030000025086-co2.rrd", "ds": "one" },
+		
+	"sensors/co2/70:ee:50:12:c8:0e":
+		{ "file": "70ee5012c80e-co2.rrd", "ds": "one" },
+	"sensors/temperature/70:ee:50:12:c8:0e":
+		{ "file": "70ee5012c80e-temperature.rrd", "ds": "one" },
+	"sensors/humidity/70:ee:50:12:c8:0e":
+		{ "file": "70ee5012c80e-humidity.rrd", "ds": "one" },
+	"sensors/pressure/70:ee:50:12:c8:0e":
+		{ "file": "70ee5012c80e-pressure.rrd", "ds": "one" },	
+	"sensors/noise/70:ee:50:12:c8:0e":
+		{ "file": "70ee5012c80e-noise.rrd", "ds": "one" },	
+
+	"sensors/temperature/300017000447343232363230":
+		{ "file": "attic-temperature.rrd", "ds": "one" },
+	"sensors/humidity/300017000447343232363230":
+		{ "file": "attic-humidity.rrd", "ds": "one" },
+
+		
+	"sensors/temperature/300021000447343233323032":
+		{ "file": "300021000447343233323032-temperature.rrd", "ds": "one" },
+	"sensors/humidity/300021000447343233323032":
+		{ "file": "300021000447343233323032-humidity.rrd", "ds": "one" },
+		
+	"sensors/temperature/garage":
+		{ "file": "currentcost-temp.rrd", "ds": "TEMP" },
+	"sensors/temperature/attic":
+		{ "file": "arduino-attic.rrd", "ds": "one" },
+	"sensors/temperature/jeenode-11":
+		{ "file": "jeenode-11-d1.rrd", "ds": "one" },
+	"sensors/temperature/jeenode-15":
+		{ "file": "jeenode-15-d1.rrd", "ds": "one" },
+	"sensors/temperature/egpd":
+		{ "file": "weather_egpd_temp.rrd", "ds": "one" },
+	"sensors/humidity/jeenode-11":
+		{ "file": "jeenode-11-d2.rrd", "ds": "one" },
+	"sensors/humidity/jeenode-15":
+		{ "file": "jeenode-15-d2.rrd", "ds": "one" },
+	"sensors/co/jeenode-15":
+		{ "file": "jeenode-15-d3.rrd", "ds": "one" },
+	"sensors/no2/jeenode-15":
+		{ "file": "jeenode-15-d4.rrd", "ds": "one" },
+	"sensors/boiler/in":
+		{ "file": "jeenode-11-dX.rrd", "ds": "one" },
+	"sensors/pressure/attic":
+		{ "file": "arduino-pressure.rrd", "ds": "one" },
+		
+	"sensors/ups/battery_voltage":
+		{ "file": "ups-battery-voltage.rrd", "ds": "one" },	
+	"sensors/ups/battery_charge":
+		{ "file": "ups-battery-charge.rrd", "ds": "one" },	
+	"sensors/ups/input_frequency":
+		{ "file": "ups-input-frequency.rrd", "ds": "one" },	
+	"sensors/ups/input_voltage":
+		{ "file": "ups-input-voltage.rrd", "ds": "one" },
+	"sensors/ups/ups_temperature":
+		{ "file": "ups-ups-temperature.rrd", "ds": "one" },
+	
+	"sensors/pressure/egpd":
+		{ "file": "weather_egpd_pressure.rrd", "ds": "one" },
+		"sensors/humidity/egpd":
+		{ "file": "weather_egpd_humidity.rrd", "ds": "one" },
+	"sensors/windspeed/egpd":
+		{ "file": "weather_egpd_windspeed.rrd", "ds": "one" },
+	"sensors/winddirection/egpd":
+		{ "file": "weather_egpd_winddirection.rrd", "ds": "one" },
+	"sensors/pressure/egpd":
+		{ "file": "weather_egpd_pressure.rrd", "ds": "one" },
+		
+	"sensors/mosquitto/sent":
+		{ "file": "mosquitto_sent.rrd", "ds": "one" },
+	"sensors/mosquitto/received":
+		{ "file": "mosquitto_received.rrd", "ds": "one" },
+
+	"sensors/printer/vostok/ink_printed":
+		{ "file": "vostok-v2.rrd", "ds": "v2" },
+	"sensors/printer/vostok/ink_remaining":
+		{ "file": "vostok-v1.rrd", "ds": "v1" },
+		
+	"sensors/printer/sputnik/ink_1":
+		{ "file": "sputnik-1.rrd", "ds": "v1" },
+	"sensors/printer/sputnik/ink_2":
+		{ "file": "sputnik-2.rrd", "ds": "v2" },
+	"sensors/printer/sputnik/ink_3":
+		{ "file": "sputnik-3.rrd", "ds": "v3" },
+	"sensors/printer/sputnik/ink_4":
+		{ "file": "sputnik-4.rrd", "ds": "v4" },
+	"sensors/printer/sputnik/ink_5":
+		{ "file": "sputnik-5.rrd", "ds": "v4" },
+
+	"sensors/printer/sputnik/pages_printed":
+		{ "file": "sputnik-pages.rrd", "ds": "v1" },
+
+
+		
+	"sensors/router/inbytes":
+		{ "file": "router-in.rrd", "ds": "one" },
+	"sensors/router/outbytes":
+		{ "file": "router-out.rrd", "ds": "one" },	
+		
+	"sensors/ios/Steve's iPhone 6":
+		{ "file": "none.rrd", "ds": "used" },
+	"sensors/ios/Steve's iPad Air 2":
+		{ "file": "none.rrd", "ds": "used" }
+}
