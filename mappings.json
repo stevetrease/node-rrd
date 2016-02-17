@@ -169,6 +169,18 @@
     "ds": "one",
     "name": "Aberdeen Airport"
   },
+  
+  "sensors/temperature/hive-current": {
+    "file": "hive-current.rrd",
+    "ds": "one",
+    "name": "Hive current"
+  },
+  "sensors/temperature/hive-target": {
+    "file": "hive-target.rrd",
+    "ds": "one",
+    "name": "Hive target"
+  },
+
   "sensors/humidity/jeenode-11": {
     "file": "jeenode-11-d2.rrd",
     "ds": "one",
