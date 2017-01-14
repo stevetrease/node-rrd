@@ -74,6 +74,7 @@
     "ds": "WATTS",
     "name": "WeMo Insight D"
   },
+  
   "sensors/temperature/02:00:00:12:d3:b6": {
     "file": "02000012d3b6-temperature.rrd",
     "ds": "one",
@@ -84,6 +85,7 @@
     "ds": "one",
     "name": "Netatmo outside"
   },
+  
   "sensors/temperature/03:00:00:02:50:86": {
     "file": "030000025086-temperature.rrd",
     "ds": "one",
@@ -99,6 +101,23 @@
     "ds": "one",
     "name": "Bedroom"
   },
+
+  "sensors/temperature/03:00:00:03:8c:82": {
+    "file": "030000038c82-temperature.rrd",
+    "ds": "one",
+    "name": "Bathroom"
+  },
+  "sensors/humidity/03:00:00:03:8c:82": {
+    "file": "030000038c82-humidity.rrd",
+    "ds": "one",
+    "name": "Bathroom"
+  },
+  "sensors/co2/03:00:00:03:8c:82": {
+    "file": "030000038c82-co2.rrd",
+    "ds": "one",
+    "name": "Bathroom"
+  },
+
   "sensors/co2/70:ee:50:12:c8:0e": {
     "file": "70ee5012c80e-co2.rrd",
     "ds": "one",
@@ -122,8 +141,9 @@
   "sensors/noise/70:ee:50:12:c8:0e": {
     "file": "70ee5012c80e-noise.rrd",
     "ds": "one",
-    "name": "NO NAME"
+    "name": "Kitchen"
   },
+
   "sensors/temperature/300017000447343232363230": {
     "file": "attic-temperature.rrd",
     "ds": "one",

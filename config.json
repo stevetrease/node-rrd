@@ -1,8 +1,11 @@
 {
-    "port": 8502,
+    "logfile": "/var/log/node-rrd/node-rrd.log",
     "mqtt":
     {
-        "host": "mqtt://localhost"
+        "host": "mqtt://localhost",
+        "port": "1883",
+        "username": "bridge",
+        "password": "qdJ0jrkHgOUWMioMu0iOteDnhnjpqu2Riv6E2qoJAgtEUrqRwtWjVkGPuUvfbwt"
     },
     "redis":
     {
